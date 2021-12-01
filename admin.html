@@ -1,0 +1,24 @@
+<html>
+ <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/bootstrap.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/bootstrap.css') }}" />
+<head>
+
+</head>
+<body>
+ <table border="1px solid black" class="table table-responsive" style="color:black ;background-color:bisque">
+    <tr  style="outline: thin solid" class="table__header">
+    {%for header in headings%}
+    <th style="outline: thin solid" class="table__cell" bgcolor="aquamarine">{{  header }}</th>
+    {%endfor%}
+    </tr>
+    {% for row in data %}
+    <tr style="outline: thin solid" >
+        {% for cell in row %}
+        <td style="outline: thin solid" >{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
